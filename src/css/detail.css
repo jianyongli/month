@@ -1,0 +1,137 @@
+header p span {
+    display: block;
+    border: 1px solid #ccc;
+    width: .7rem;
+    height: .3rem;
+    line-height: .3rem;
+    text-align: center;
+}
+
+header p {
+    display: flex;
+}
+
+header p span.on {
+    background: #666;
+    color: #fff;
+}
+
+section {
+    width: 100%;
+    height: auto;
+}
+
+.detail-con {
+    width: 100%;
+    height: auto;
+}
+
+.detail-con dl .imgs {
+    width: 100%;
+    height: 3rem;
+}
+
+.detail-con dl .imgs img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.detail-con dl dd {
+    width: 100%;
+    line-height: .2rem;
+    padding-left: .1rem;
+}
+
+.detail-con dl dd span {
+    color: red;
+}
+
+.list-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.list-info dl {
+    width: 33.3%;
+    display: flex;
+    padding: .1rem;
+    margin: 0 auto;
+}
+
+.fen {
+    width: 100%;
+    height: auto;
+    padding-left: .1rem;
+}
+
+.fen p {
+    width: 100%;
+    height: .4rem;
+    line-height: .4rem;
+}
+
+.user {
+    width: 100%;
+    height: .4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .1rem;
+}
+
+.look {
+    width: 100%;
+    height: 1.3rem;
+    text-align: center;
+    padding: .1rem 0;
+}
+
+.look span {
+    display: block;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    border-radius: 50%;
+    background: #eee;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.xq-list {
+    width: 100%;
+    height: auto;
+    padding-left: .3rem;
+}
+
+.xq-list p {
+    height: .4rem;
+    line-height: .4rem;
+    border-bottom: 1px dashed #ccc;
+}
+
+.people {
+    width: 100%;
+    height: .3rem;
+    padding-left: .1rem;
+}
+
+.content {
+    padding: .1rem;
+    line-height: .2rem;
+}
+
+footer {
+    width: 100%;
+    height: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .1rem;
+    border-top: 1px solid #ccc;
+}
+
+footer i {
+    margin-right: .1rem;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="" href="../css/common.css">
+    <link rel="stylesheet" type="" href="../css/detail.css">
+    <link rel="stylesheet" type="" href="../css/style.css">
+    <link rel="stylesheet" type="" href="../icon/iconfont.css">
+    <link rel="stylesheet" type="" href="../css/swiper-3.4.2.min.css">
+</head>
+
+<body>
+    <div class="box">
+        <header>
+            <i class="iconfont back">&#xe653;</i>
+            <p>
+                <span class="on">商品</span>
+                <span class="xqBtn">详情</span>
+                <span class="cpBtn">测评</span>
+            </p>
+            <p>
+                <i class="iconfont">&#xe648;</i>
+                <i class="iconfont">&#xe628;</i>
+            </p>
+        </header>
+
+        <section>
+            <div class="detail-tab swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="detail-con">
+
+                            <script type="text/x-handlebars-template" id="detail-tpl">
+                                {{#each this}}
+                                <dl>
+                                    <dt class="imgs">
+                                     <img src="{{img}}" alt="">
+                                 </dt>
+                                    <dd>
+                                        <div class="list-info">
+                                            <dl>
+                                                <dt>
+                                              <img src="../img/5.png" alt="">
+                                            </dt>
+                                                <dd>
+                                                    <p>蓝青天丝</p>
+                                                    <p>细腻柔棉</p>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>
+                                                   <img src="../img/6.png" alt="">
+                                                </dt>
+                                                <dd>
+                                                    <p>蓝青天丝</p>
+                                                    <p>细腻柔棉</p>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>
+                                                  <img src="../img/7.png" alt="">
+                                               </dt>
+                                                <dd>
+                                                    <p>蓝青天丝</p>
+                                                    <p>细腻柔棉</p>
+                                                </dd>
+                                            </dl>
+
+
+                                        </div>
+
+                                        <p>{{tit}}</p>
+                                        <h6>{{info}}</h6>
+                                        <span>{{price}}</span>
+                                    </dd>
+                                </dl>
+                                {{/each}}
+                            </script>
+
+                        </div>
+                        <div class="fen">
+                            <p>积分：购买最高得59积分</p>
+                            <p>服务：30天无忧退货 48小时快速对货 满88包邮</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide xq">
+                        <div class="user">
+                            <a href="javascript:;">用户评价</a>
+                            <a href="javascript:;">97.4%好评 
+                                <i class="iconfont back">&#xe723;</i>
+                            </a>
+                        </div>
+
+                        <div class="look">
+                            <p>上拉查看更多历史</p>
+                            <span><i class="iconfont back">&#xe6dd;</i></span>
+                            <p>下拉返回顶部</p>
+                        </div>
+
+                        <div class="xq-list">
+                            <p>使用季节 四季通用</p>
+                            <p>款式 床单是</p>
+                            <p>面料 全面</p>
+                            <p>风格 北欧</p>
+                            <p>工艺 AB版</p>
+                            <p>图案 花枝</p>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="people">
+                            <a href="javascript:;">
+                                <i class="iconfont">&#xe627;</i>公司职员
+                            </a>
+
+                        </div>
+
+                        <div class="content">
+                            <p>的开发商的的风景都放假时间付款金额为花哦金融界防护等回复二分局的开发基地移动客服节>的开发商的的风景都放假时间付款金额为花哦金融界防护等回复二分局的开发基地移动客服节>的开发商的的风景都放假时间付款金额为花哦金融界防护等回复二分局的开发基地移动客服节</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <a href="javascript:;">
+                <i class="iconfont back">&#xe62f;</i>
+                <i class="iconfont back">&#xe63c;</i>
+                <i class="iconfont back">&#xe67c;</i>
+            </a>
+            <a href="javascript:;">上架提醒</a>
+            <a href="javascript:;">即将上架</a>
+        </footer>
+    </div>
+
+    <script src="../js/libs/jquery-1.8.3.min.js"></script>
+    <script src="../js/libs/swiper-3.4.2.min.js"></script>
+    <script src="../js/libs/iscroll-probe.js"></script>
+    <script src="../js/libs/handlebars.js"></script>
+
+    <script>
+        //点击返回
+        $('.back').on('click', function() {
+            history.go(-1);
+        });
+
+        //实例化swiper
+        var mySwiper = new Swiper('.detail-tab', {
+            onSlideChangeStart: function(e) {
+                var index = e.activeIndex;
+                $('header span').eq(index).addClass('on').siblings().removeClass('on');
+            }
+        })
+        $('header span').on('click', function() {
+            var i = $(this).index();
+            mySwiper.slideTo(i);
+        })
+
+        //渲染跳转详情页数据  ajax请求和handlebars
+        var url = location.search;
+        var str = url.substr(1);
+        var id = str.split('=')[1];
+        console.log(id);
+
+        $.ajax({
+            url: '/api/detail?id=' + id,
+            dataType: 'json',
+            success: function(data) {
+                console.log(data)
+                var detailtpl = $('#detail-tpl').html();
+                var template = Handlebars.compile(detailtpl);
+                var html = template(data[id]);
+                $('.detail-con').html(html);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

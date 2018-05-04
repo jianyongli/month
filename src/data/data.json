@@ -1,0 +1,59 @@
+{
+    "product": [{
+        "id": "list1",
+        "img": "img/1.png",
+        "info": "柔滑蓝青天丝，清凉亲肤保湿",
+        "time": "即将上映",
+        "tit": "Paisley欧式天丝四件套",
+        "price": "￥599"
+    }, {
+        "id": "list2",
+        "img": "img/2.png",
+        "info": "柔滑蓝青天丝，清凉亲肤保湿",
+
+        "tit": "通气呼吸啥四件套",
+        "price": "￥459"
+    }, {
+        "id": "list3",
+        "img": "img/3.png",
+        "info": "柔滑蓝青天丝，清凉亲肤保湿",
+        "time": "满赠",
+        "tit": "影自然 迷雾玉林四件套",
+        "price": "￥399"
+    }, {
+        "id": "list4",
+        "img": "img/4.png",
+        "info": "柔滑蓝青天丝，清凉亲肤保湿",
+
+        "tit": "影自然 仲夏椰香四件套",
+        "price": "￥599"
+    }, {
+        "id": "list5",
+        "img": "img/1.png",
+        "info": "柔滑蓝青天丝，清凉亲肤保湿",
+        "time": "即将上映",
+        "tit": "Paisley欧式天丝四件套",
+        "price": "￥599"
+    }, {
+        "id": "list6",
+        "img": "img/2.png",
+        "info": "柔滑蓝青天丝，清凉亲肤保湿",
+
+        "tit": "通气呼吸啥四件套",
+        "price": "￥459"
+    }, {
+        "id": "list7",
+        "img": "img/3.png",
+        "info": "柔滑蓝青天丝，清凉亲肤保湿",
+        "time": "即将上映",
+        "tit": "Paisley欧式天丝四件套",
+        "price": "￥599"
+    }, {
+        "id": "list7",
+        "img": "img/4.png",
+        "info": "柔滑蓝青天丝，清凉亲肤保湿",
+
+        "tit": "通气呼吸啥四件套",
+        "price": "￥459"
+    }]
+}
