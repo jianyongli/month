@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="" href="css/common.css">
+    <link rel="stylesheet" type="" href="css/style.css">
+    <link rel="stylesheet" type="" href="icon/iconfont.css">
+    <link rel="stylesheet" type="" href="css/swiper-3.4.2.min.css">
+</head>
+
+<body>
+    <div class="box">
+        <header>
+            <i class="iconfont">&#xe653;</i>
+            <a href="javascript:;">居家</a>
+            <i class="iconfont">&#xe729;</i>
+        </header>
+
+        <section>
+            <div class="tit-iscroll">
+                <div class="title">
+                    <a href="javascript:;" class="on">床品件套</a>
+                    <a href="javascript:;">被针</a>
+                    <a href="javascript:;">家具</a>
+                    <a href="javascript:;">收纳</a>
+                    <a href="javascript:;">软装</a>
+                    <a href="javascript:;">沙发</a>
+                    <a href="javascript:;">台灯</a>
+                    <a href="javascript:;">棉被</a>
+                </div>
+
+                <!--内容切换-->
+                <div class="tab swiper-container">
+                    <div class="swiper-wrapper con">
+                        <div class="swiper-slide con-list">
+                            <dl>
+                                <dt>
+                                     <img src="img/1.png" alt="">
+                                 </dt>
+                                <dd>
+                                    <p>柔滑蓝青天丝，清凉亲肤保湿</p>
+                                    <b>即将上映</b>
+                                    <h6>Paisley欧式天丝四件套</h6>
+                                    <span>￥599</span>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                     <img src="img/1.png" alt="">
+                                 </dt>
+                                <dd>
+                                    <p>柔滑蓝青天丝，清凉亲肤保湿</p>
+                                    <b>即将上映</b>
+                                    <h6>Paisley欧式天丝四件套</h6>
+                                    <span>￥599</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="swiper-slide con-list">
+                            <dl>
+                                <dt>
+                                     <img src="img/1.png" alt="">
+                                 </dt>
+                                <dd>
+                                    <p>柔滑蓝青天丝，清凉亲肤保湿</p>
+                                    <b>即将上映</b>
+                                    <h6>Paisley欧式天丝四件套</h6>
+                                    <span>￥599</span>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                     <img src="img/1.png" alt="">
+                                 </dt>
+                                <dd>
+                                    <p>柔滑蓝青天丝，清凉亲肤保湿</p>
+                                    <b>即将上映</b>
+                                    <h6>Paisley欧式天丝四件套</h6>
+                                    <span>￥599</span>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <div class="swiper-slide">
+                            家具
+                        </div>
+                        <div class="swiper-slide">
+                            收纳
+                        </div>
+                        <div class="swiper-slide">
+                            软床
+                        </div>
+                        <div class="swiper-slide">
+                            沙发
+                        </div>
+                        <div class="swiper-slide">
+                            台灯
+                        </div>
+                        <div class="swiper-slide">
+                            棉被
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/libs/jquery-1.8.3.min.js"></script>
+    <script src="js/libs/swiper-3.4.2.min.js"></script>
+    <script src="js/libs/iscroll-probe.js"></script>
+
+    <script>
+        //计算title的宽
+        var aW = $('.title a').outerWidth(true);
+        var aLen = $('.title a').length;
+        $('.title').css({
+            width: aW * aLen + 'px'
+        })
+
+
+        //实例化iscroll
+        var myiscroll = new IScroll('.tit-iscroll', {
+            scrollX: true,
+            scrollY: false
+        });
+
+        //实例化title切换
+        var mySwiper = new Swiper('.tab', {
+            onSlideChangeStart: function(e) {
+                var index = e.activeIndex;
+                $('.title a').eq(index).addClass('on').siblings().removeClass('on');
+            }
+        })
+        $('.title a').on('click', function() {
+            var i = $(this).index();
+            mySwiper.slideTo(i);
+        })
+    </script>
+</body>
+
+</html>
